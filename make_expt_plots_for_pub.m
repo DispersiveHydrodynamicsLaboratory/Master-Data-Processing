@@ -14,10 +14,10 @@ debug_on = 0;
 save_on  = 1;
 Ninterp  = 500;
 outerpos = 0; 
-fontsize = 7;
+fontsize = 12;%7;
 fontname = 'helvetica';
-w1       = (8.25-0.6*2)/4*2.54;
-h1       = 1.25*2.54;%w1/1.618;
+w1       = 20;%(8.25-0.6*2)/4*2.54;
+h1       = 16;%1.25*2.54;%w1/1.618;
 units    = 'centimeters';
 fspec    = '-dpdf';
 res      = '-r0';
@@ -26,6 +26,7 @@ ylabelsize = 5;
 
 imgrows = 250;
 imgcols = imgrows*20;
+% imgrows = imgrows*snaps_vec(3);
 
 load([sourcedir,'img_timestamps.mat'],'T');
 

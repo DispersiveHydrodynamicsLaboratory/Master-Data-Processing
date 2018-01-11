@@ -11,7 +11,7 @@ disp(['Processing from directory: ',updir]);
 slant = filesep;
 
 loadmat = 1; % Set to 1 to load in edge data, 0 to reformat data
-runfigs = [1 0 0 1]; % [Trial01, Trial02, Trial03, Trial04]
+runfigs = [0 0 0 1]; % [Trial01, Trial02, Trial03, Trial04]
 extra_dir = 'full_cam';
 
 if runfigs(1)
@@ -26,7 +26,7 @@ if runfigs(1)
             load([sourcedir1,'img_timestamps.mat'],'T');
             tmax = max(T)-min(T);
         end
-        snaptimes = [90 170 250 288];
+        snaps = [90 170 250 288];
             snaplim = 210;
             snapw   = 150;
 %         spa = [ {'(e)'}, {'(f)'} ];
@@ -39,7 +39,7 @@ if runfigs(1)
             fh2name = [pwd,slant,figname,'_contour'];
             [fh1, fh2] = make_expt_plots_for_pub(sourcedir1,loadmat,quants,...
                                 tmin,tmax,zmin,zmax,cmin,cred,cmax,...
-                                snaptimes,[snaplim snaplim+snapw 5],...
+                                snaps,[snaplim snaplim+snapw 5],...
                                 1,fh1name,fh2name,slant);%,spa);
 end
 
@@ -55,7 +55,7 @@ if runfigs(2)
             load([sourcedir2,'img_timestamps.mat'],'T');
             tmax = max(T)-min(T);
         end
-        snaptimes = linspace(tmin,tmax,6);
+        snaps = linspace(tmin,tmax,6);
             snaplim = 210;
             snapw   = 150;
 %         spa = [ {'(e)'}, {'(f)'} ];
@@ -68,7 +68,7 @@ if runfigs(2)
             fh2name = [pwd,slant,figname,'_contour'];
             [fh1, fh2] = make_expt_plots_for_pub(sourcedir2,loadmat,quants,...
                                 tmin,tmax,zmin,zmax,cmin,cred,cmax,...
-                                snaptimes,[snaplim snaplim+snapw 5],...
+                                snaps,[snaplim snaplim+snapw 5],...
                                 1,fh1name,fh2name,slant);%,spa);
 end
 
@@ -84,7 +84,7 @@ if runfigs(3)
             load([sourcedir3,'img_timestamps.mat'],'T');
             tmax = max(T)-min(T);
         end
-        snaptimes = linspace(tmin,tmax,6);
+        snaps = linspace(tmin,tmax,6);
             snaplim = 210;
             snapw   = 150;
 %         spa = [ {'(e)'}, {'(f)'} ];
@@ -97,7 +97,7 @@ if runfigs(3)
             fh2name = [pwd,slant,figname,'_contour'];
             [fh1, fh2] = make_expt_plots_for_pub(sourcedir3,loadmat,quants,...
                                 tmin,tmax,zmin,zmax,cmin,cred,cmax,...
-                                snaptimes,[snaplim snaplim+snapw 5],...
+                                snaps,[snaplim snaplim+snapw 5],...
                                 1,fh1name,fh2name,slant);%,spa);
 end
   
@@ -113,7 +113,7 @@ if runfigs(4)
             load([sourcedir4,'img_timestamps.mat'],'T');
             tmax = max(T)-min(T);
         end
-        snaptimes = [0 35 80 210];
+        snaps = [0 35 80 200];
             snaplim = 210;
             snapw   = 150;
 %         spa = [ {'(e)'}, {'(f)'} ];
@@ -126,7 +126,7 @@ if runfigs(4)
             fh2name = [pwd,slant,figname,'_contour'];
             [fh1, fh2] = make_expt_plots_for_pub(sourcedir4,loadmat,quants,...
                                 tmin,tmax,zmin,zmax,cmin,cred,cmax,...
-                                snaptimes,[snaplim snaplim+snapw 5],...
+                                snaps,[snaplim snaplim+snapw 5],...
                                 3,fh1name,fh2name,slant);%,spa);
 end
 
